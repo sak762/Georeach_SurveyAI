@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="fonts/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="fonts/simple-line-icons/css/simple-line-icons.css" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body id="app-container" class="menu-main-hidden show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0" y="0.5" width="26" height="1" />
+                    <rect x="0" y="7.5" width="26" height="1" />
+                    <rect x="0" y="15.5" width="26" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+
+            <div class="search" data-search-path="Pages.Search.html?q=">
+                <input placeholder="Search...">
+                <span class="search-icon">
+                    <i class="simple-icon-magnifier"></i>
+                </span>
+            </div>
+        </div>
+
+        <a class="navbar-logo" href="Dashboard.Default.html">
+            <span class="logo d-none d-xs-block"></span>
+            <span class="logo-mobile d-block d-xs-none"></span>
+        </a>
+
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                
+
+                <div class="position-relative d-none d-sm-inline-block">
+                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="simple-icon-grid"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-equalizer d-block"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-male-female d-block"></i>
+                            <span>Users</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-puzzle d-block"></i>
+                            <span>Components</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-bar-chart-4 d-block"></i>
+                            <span>Profits</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-file d-block"></i>
+                            <span>Surveys</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-suitcase d-block"></i>
+                            <span>Tasks</span>
+                        </a>
+
+                    </div>
+                </div>
+
+               
+
+                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
+                    <i class="simple-icon-size-fullscreen"></i>
+                    <i class="simple-icon-size-actual"></i>
+                </button>
+
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name">user@123.gmail.com</span>
+                    <span>
+                        <img alt="Profile Picture" src="image/Authentication_pic.png" />
+                    </span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-right mt-3">
+                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="#">Features</a>
+                    <a class="dropdown-item" href="#">History</a>
+                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="#">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="main-menu">
+            <div class="scroll">
+                <ul class="list-unstyled">
+                    <li class="active">
+                        <a href="#menu">
+                            <i class="iconsminds-three-arrow-fork"></i> Menu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-menu">
+            <div class="scroll">
+                <h1 style="margin-left: 15px;">Create a survey</h1>
+                <div class="dropdown-divider"></div>
+                <ul class="list-unstyled" data-link="menu" id="menuTypes">
+                    
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_withAI.html" class="icon-menu-item">
+                                        <i class="simple-icon-screen-desktop"></i>  <span class="d-inline-block">Build with AI</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_Scratch.html">
+                                        <i class="simple-icon-docs"></i> <span class="d-inline-block">Start from scratch</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body text-centre">
+                                    <a  href="#">
+                                        <i class="simple-icon-picture"></i> <span class="d-inline-block">Start from </span> 
+                                        <span>template</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a  href="#">
+                                        <i class="simple-icon-doc"></i> <span class="d-inline-block">Copy a past survey</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="dropdown-divider"></div>
+
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container-fluid disable-text-selection" >
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-2">
+                        <h1>Templates</h1>
+                        <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                            <ol class="breadcrumb pt-0">
+                                <li class="breadcrumb-item">
+                                    <a href="../index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">Plan & pricing</a>
+                                </li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="Create_survey.html">Create Surveys</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    
+                    
+                    <div class="separator mb-5"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h2><b>Most Propular surveys</b></h2>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row list disable-text-selection" data-check-all="checkAll">
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Customer_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                        <p class="list-item-heading  pt-1" id="btn1" onclick="loadFunction('customer_satisfaction')">Customer Satisfaction Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Let customers rate your product’s value and quality.</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Product_analysis_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1"  id="btn3" onclick="loadFunction('healthcare_surveys')">Healthcare Survey Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Let customers rate your product’s value and quality.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Unitversity_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1" id="btn4" onclick="loadFunction('university_instructor')">University Instructor Evaluation Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Ask students for feedback on a professor’s teaching style.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_6.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1" id="btn5" onclick="loadFunction('Event_managment')">Entertainment Event Feedback Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Collect post-event feedback from concerts, trade shows, and more.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Software_feedback__template.jpg"
+                                    alt="Card image cap"></a>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1" id="btn6 " onclick="loadFunction('Software_feedback')">Software and App Feedback </p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Would your customers recommend your software or</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Blonging__template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1" id="btn7" onclick="loadFunction('Retail_survey')"> Retail Survey Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Developed with Paradigm, a leader in diversity and inclusion</p>
+                                        <br>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Volunteer_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1" id="btn9" onclick="loadFunction('Volunteer_feedback')">Volunteer Feedback Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Ask volunteers how it was working with you.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Work_from_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1" id="btn10" onclick="loadFunction('Work_from_home')">Working From Home Check-In</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Support employees by checking in with them weekly.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <h2><b>Customer feedback surveys</b></h2>
+                    <div class="separator mb-5"></div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row list disable-text-selection" data-check-all="checkAll">
+                
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Customer_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1">Customer Satisfaction Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Let customers rate your product’s value and quality.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Software_feedback__template.jpg"
+                                    alt="Card image cap"></a>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1">Software and App Feedback </p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Would your customers recommend your software or</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Net_promotor_template.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                               
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading  pt-1">Net Promoter® Score (NPS) Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Measure customer loyalty and take action to reduce churn.</p>
+                                    </a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_6.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Entertainment Event Feedback Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Collect post-event feedback from concerts, trade shows, and more.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Customer_service_template.png"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Customer Service Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Assess and improve satisfaction with your customer service.</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Customer_application_template.png"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Application Experience Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Make sure your applicants were able to access and use your</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Custome_buisness_template.png"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Business to Business Template</p>
+<p class="text-muted text-small mb-0 font-weight-light">Gather feedback from your corporate clients.</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <h2><b>Marketing surveys</b></h2>
+                    <div class="separator mb-5"></div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row list disable-text-selection" data-check-all="checkAll">
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Marketing_template_1.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Brand Awareness Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Determine your overall brand reach and awareness.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Marketing_template_2.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Email Newsletter Subscription Form</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Newsletter Subscription Form</p>
+                                        <br>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Marketing_template_3.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Employee Award Nomination Form</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Effortlessly create new award suggestions, fill out employee</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Marketing_template_4.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Competitive Differentiation Survey</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Competitive Differentiation Survey</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Marketing_template_5.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Customer Impact Survey</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Customer Impact Survey</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <h2><b>Eduation surveys</b></h2>
+                    <div class="separator mb-5"></div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row list disable-text-selection" data-check-all="checkAll">
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_1.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">General High School Satisfaction Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Find out how students feel about teachers, peers, and</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_2.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">K-12 Parent Survey</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">An abridged version of the Harvard Grad. School of Ed. Pre</p>
+                                        <br>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_3.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">K12 Distance Learning Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">This template is for school administrators and teachers to</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_4.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Quiz - Capitals of the World</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Test your students’ knowledge of global cities and countries.</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_5.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Quiz - Periodic Table of Elements</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">See what bits of the periodic table your students remember.</p>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_6.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">University Instructor Evaluation Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Ask students for feedback on a professor’s teaching style.</p>
+
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_7.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Alumni Registration Form</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Use this form to register alumni.</p>
+                                        <br>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <h2><b>Events feedback surveys</b></h2>
+                    <div class="separator mb-5"></div>
+                    <br>
+                </div>
+            </div>
+
+            <div class="row list disable-text-selection" data-check-all="checkAll">
+                
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_4.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Endurance Event Feedback Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Engage with attendees to learn what they thought of your event.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_6.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Entertainment Event Feedback Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Collect post-event feedback from concerts, trade shows, and more.</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-lg-4 col-12 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="position-relative">
+                            <a href="#"><img class="card-img-top" src="image/Template-img/Education_template_7.jpg"
+                                    alt="Card image cap"></a>
+                            <span class="badge badge-pill badge-theme-1 position-absolute badge-top-left">NEW</span>
+                            <span
+                                class="badge badge-pill badge-secondary position-absolute badge-top-left-2">TRENDING</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-10">
+                                    <a href="#">
+                                        <p class="list-item-heading pt-1">Event Planning Template</p>
+                                        <p class="text-muted text-small mb-0 font-weight-light">Confirm RSVPs and ask what people want to learn or discuss.</p>
+                                        <br>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">Georeach Technologies  2024</p>
+                    </div>
+                    <div class="col-sm-6 d-none d-sm-block">
+                        <ul class="breadcrumb pt-0 pr-0 float-right">
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../index.html" class="btn-link">Home</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Plan & pricing</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../Contact-us.html" class="btn-link">Contact us </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/mousetrap.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        function loadFunction(funcName) {
+            window.location.href = `Survey_preview.html?func=${funcName}`;
+        }
+    </script>
+</body>
+
+</html>
+
+
+

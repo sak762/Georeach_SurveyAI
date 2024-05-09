@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="fonts/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="fonts/simple-line-icons/css/simple-line-icons.css" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    
+</head>
+
+<body id="app-container" class="menu-main-hidden show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0" y="0.5" width="26" height="1" />
+                    <rect x="0" y="7.5" width="26" height="1" />
+                    <rect x="0" y="15.5" width="26" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+
+            <div class="search" data-search-path="Pages.Search.html?q=">
+                <input placeholder="Search...">
+                <span class="search-icon">
+                    <i class="simple-icon-magnifier"></i>
+                </span>
+            </div>
+        </div>
+
+        <a class="navbar-logo" href="Dashboard.Default.html">
+            <span class="logo d-none d-xs-block"></span>
+            <span class="logo-mobile d-block d-xs-none"></span>
+        </a>
+
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                
+
+                <div class="position-relative d-none d-sm-inline-block">
+                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="simple-icon-grid"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-equalizer d-block"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-male-female d-block"></i>
+                            <span>Users</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-puzzle d-block"></i>
+                            <span>Components</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-bar-chart-4 d-block"></i>
+                            <span>Profits</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-file d-block"></i>
+                            <span>Surveys</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-suitcase d-block"></i>
+                            <span>Tasks</span>
+                        </a>
+
+                    </div>
+                </div>
+
+               
+
+                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
+                    <i class="simple-icon-size-fullscreen"></i>
+                    <i class="simple-icon-size-actual"></i>
+                </button>
+
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name">user@123.gmail.com</span>
+                    <span>
+                        <img alt="Profile Picture" src="image/Authentication_pic.png" />
+                    </span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-right mt-3">
+                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="#">Features</a>
+                    <a class="dropdown-item" href="#">History</a>
+                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="#">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="main-menu">
+            <div class="scroll">
+                <ul class="list-unstyled">
+                    <li class="active">
+                        <a href="#menu">
+                            <i class="iconsminds-three-arrow-fork"></i> Menu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-menu">
+            <div class="scroll">
+                <h1 style="margin-left: 15px;">Create a survey</h1>
+                <div class="dropdown-divider"></div>
+                <ul class="list-unstyled" data-link="menu" id="menuTypes">
+                    
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_withAI.html" class="icon-menu-item">
+                                        <i class="simple-icon-screen-desktop"></i>  <span class="d-inline-block">Build with AI</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div class="card-body">
+                                    <a href="#" id="startFromScratchLink">
+                                        <i class="simple-icon-docs"></i> <span class="d-inline-block">Start from scratch</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body text-centre">
+                                    <a  href="Start_from_template.html">
+                                        <i class="simple-icon-picture"></i> <span class="d-inline-block">Start from </span> 
+                                        <span>template</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a  href="#">
+                                        <i class="simple-icon-doc"></i> <span class="d-inline-block">Copy a past survey</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="dropdown-divider"></div>
+
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="modal fade" id="exampleModalContent" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalContentLabel">New Survey</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label"><b>Survey title </b>:</label>
+                                <input type="text" class="form-control" id="survey-title" placeholder="Survey name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label"><b>Survey Category(optional)</b></label>
+                                <select class="form-control select2-single" data-width="100%" id="survey-category">
+                                    <option selected>Select survey optional</option>
+                                    <option value="Community or volunteer feedback">Community or volunteer feedback</option>
+                                    <option value="Customer feedback">Customer feedback</option>
+                                    <option value="Concept, product, or ad testing">Concept, product, or ad testing</option>
+                                    <option value="3">Brand tracking or awareness</option>
+                                    <option value="4">General market research</option>
+                                    <option value="5">Employee engagement</option>
+                                    <option value="6">Employee performance</option>
+                                    <option value="7">Genral employee feedback</option>
+                                    <option value="8">Event feedback</option>
+                                    <option value="9">Student or parent feedback</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="createSurvey()">Create survey</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid disable-text-selection">
+            <div class="row">
+                <div class="col-12">
+                    <div class="mb-2">
+                        <h1>Survey History</h1>
+                        <div class="top-right-button-container">
+                            <button type="button" class="btn btn-primary btn-lg top-right-button mr-1">ADD NEW</button>
+                            <div class="btn-group">
+                                <div class="btn btn-primary btn-lg pl-4 pr-0 check-button">
+                                    <label class="custom-control custom-checkbox mb-0 d-inline-block">
+                                        <input type="checkbox" class="custom-control-input" id="checkAll">
+                                        <span class="custom-control-label">&nbsp;</span>
+                                    </label>
+                                </div>
+                                <button type="button"
+                                    class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#">Delete all</a>
+                                    <a class="dropdown-item" href="#">Delete only selected</a>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                            <ol class="breadcrumb pt-0">
+                                <li class="breadcrumb-item">
+                                    <a href="../index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">Plan & pricing</a>
+                                </li>
+                                <li class="breadcrumb-item " aria-current="page"><a href="Create_survey.html">Create Surveys</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+
+                    
+                    
+                    <div class="separator mb-5"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 list" data-check-all="checkAll">
+                    <div class="card d-flex flex-row mb-3">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100" href="Pages.Product.Detail.html">
+                                    Survey 1
+                                </a>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Questions</p>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">02.04.2018</p>
+                                <div class="w-15 w-xs-100">
+                                    <span class="badge badge-pill badge-secondary">Build</span>
+                                </div>
+                            </div>
+                            <label class="custom-control custom-checkbox mb-1 align-self-center pr-4">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label">&nbsp;</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card d-flex flex-row mb-3">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100" href="Pages.Product.Detail.html">
+                                   Survey 2
+                                </a>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Questions</p>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">01.04.2018</p>
+                                <div class="w-15 w-xs-100">
+                                    <span class="badge badge-pill badge-primary">AI</span>
+                                </div>
+                            </div>
+                            <label class="custom-control custom-checkbox mb-1 align-self-center pr-4">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label">&nbsp;</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card d-flex flex-row mb-3">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100" href="Pages.Product.Detail.html">
+                                    Survey 3
+                                </a>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Questions</p>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">25.03.2018</p>
+                                <div class="w-15 w-xs-100">
+                                    <span class="badge badge-pill badge-primary">Template</span>
+                                </div>
+                            </div>
+                            <label class="custom-control custom-checkbox mb-1 align-self-center pr-4">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label">&nbsp;</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="card d-flex flex-row mb-3">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100" href="Pages.Product.Detail.html">
+                                    Survey 4
+                                </a>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Questions</p>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">20.03.2018</p>
+                                <div class="w-15 w-xs-100">
+                                    <span class="badge badge-pill badge-primary">Build</span>
+                                </div>
+                            </div>
+                            <label class="custom-control custom-checkbox mb-1 align-self-center pr-4">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label">&nbsp;</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card d-flex flex-row mb-3">
+                        <div class="d-flex flex-grow-1 min-width-zero">
+                            <div
+                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                <a class="list-item-heading mb-0 truncate w-40 w-xs-100" href="Pages.Product.Detail.html">
+                                    Survey 5
+                                </a>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">Questions</p>
+                                <p class="mb-0 text-muted text-small w-15 w-xs-100">15.03.2018</p>
+                                <div class="w-15 w-xs-100">
+                                    <span class="badge badge-pill badge-secondary">Template</span>
+                                </div>
+                            </div>
+                            <label class="custom-control custom-checkbox mb-1 align-self-center pr-4">
+                                <input type="checkbox" class="custom-control-input">
+                                <span class="custom-control-label">&nbsp;</span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">Georeach Technologies  2024</p>
+                    </div>
+                    <div class="col-sm-6 d-none d-sm-block">
+                        <ul class="breadcrumb pt-0 pr-0 float-right">
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../index.html" class="btn-link">Home</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Plan & pricing</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../Contact-us.html" class="btn-link">Contact us </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/mousetrap.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the link element
+            const startFromScratchLink = document.getElementById('startFromScratchLink');
+        
+            // Add click event listener to the link
+            startFromScratchLink.addEventListener('click', function (event) {
+                // Prevent the default link behavior
+                event.preventDefault();
+        
+                // Open the modal
+                $('#exampleModalContent').modal('show');
+            });
+        });
+
+        
+        function createSurvey() {
+            // Get the input values from the modal
+            var surveyTitle = document.getElementById('survey-title').value;
+            var surveyCategory = document.getElementById('survey-category').value;
+    
+            // Store the values in localStorage
+            localStorage.setItem('surveyTitle', surveyTitle);
+            localStorage.setItem('surveyCategory', surveyCategory);
+    
+            // Redirect to the Build_with_scratch.html page
+            window.location.href = 'Build_Scratch.html';
+        }
+    </script>
+    
+</body>
+
+</html>

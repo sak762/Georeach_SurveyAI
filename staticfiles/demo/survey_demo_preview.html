@@ -1,0 +1,1007 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey preview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="fonts/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="fonts/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    
+    <link rel="stylesheet" href="css/vendor/nouislider.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-stars.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/rating_scale.css" />
+    
+</head>
+
+<body id="app-container" class="menu-hidden show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0" y="0.5" width="26" height="1" />
+                    <rect x="0" y="7.5" width="26" height="1" />
+                    <rect x="0" y="15.5" width="26" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+
+            <div class="search" data-search-path="Pages.Search.html?q=">
+                <input placeholder="Search...">
+                <span class="search-icon">
+                    <i class="simple-icon-magnifier"></i>
+                </span>
+            </div>
+        </div>
+
+        <a class="navbar-logo" href="Dashboard.Default.html">
+            <span class="logo d-none d-xs-block"></span>
+            <span class="logo-mobile d-block d-xs-none"></span>
+        </a>
+
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                
+
+                <div class="position-relative d-none d-sm-inline-block">
+                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="simple-icon-grid"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-equalizer d-block"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-male-female d-block"></i>
+                            <span>Users</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-puzzle d-block"></i>
+                            <span>Components</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-bar-chart-4 d-block"></i>
+                            <span>Profits</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-file d-block"></i>
+                            <span>Surveys</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-suitcase d-block"></i>
+                            <span>Tasks</span>
+                        </a>
+
+                    </div>
+                </div>
+
+               
+
+                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
+                    <i class="simple-icon-size-fullscreen"></i>
+                    <i class="simple-icon-size-actual"></i>
+                </button>
+
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name">user@123.gmail.com</span>
+                    <span>
+                        <img alt="Profile Picture" src="image/Authentication_pic.png" />
+                    </span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-right mt-3">
+                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="#">Features</a>
+                    <a class="dropdown-item" href="#">History</a>
+                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="#">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="main-menu">
+            <div class="scroll">
+                <ul class="list-unstyled">
+                    <li class="active">
+                        <a href="#menu">
+                            <i class="iconsminds-three-arrow-fork"></i> Menu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-menu">
+            <div class="scroll">
+                <h1 style="margin-left: 15px;">Create a survey</h1>
+                <div class="dropdown-divider"></div>
+                <ul class="list-unstyled" data-link="menu" id="menuTypes">
+                    
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_withAI.html" class="icon-menu-item">
+                                        <i class="simple-icon-screen-desktop"></i>  <span class="d-inline-block">Build with AI</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_Scratch.html">
+                                        <i class="simple-icon-docs"></i> <span class="d-inline-block">Start from scratch</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body text-centre">
+                                    <a  href="#">
+                                        <i class="simple-icon-picture"></i> <span class="d-inline-block">Start from </span> 
+                                        <span>template</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a  href="#">
+                                        <i class="simple-icon-doc"></i> <span class="d-inline-block">Copy a past survey</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="dropdown-divider"></div>
+
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <main>
+
+
+        <div class="container-fluid">
+            <div class="row  ">
+                <div class="col-12 survey-app">
+                    <div class="mb-2">
+                        <h1>Developer Survey</h1>
+                        <div class="text-zero top-right-button-container">
+                            <button type="button"
+                                class="btn btn-lg btn-outline-primary dropdown-toggle dropdown-toggle-split top-right-button top-right-button-single"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ACTIONS
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs separator-tabs ml-0 mb-5" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                                aria-controls="first" aria-selected="true">DETAILS</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="third-tab" data-toggle="tab" href="#third" role="tab"
+                                aria-controls="third" aria-selected="false">RESULTS</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content mb-4">
+                        <div class="tab-pane show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                            <div class="row">
+
+                                <div class="col-12 col-lg-8">
+
+                                    <div class="sortable-survey">
+                                        <div>
+                                            <div class="card question d-flex mb-4 edit-quesiton">
+                                                <div class="question">
+                                                <div class="d-flex flex-grow-1 min-width-zero">
+                                                    <div
+                                                        class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                                        <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                            <span class="heading-number d-inline-block">
+                                                                1
+                                                            </span>
+                                                            Select the most important aspect of healthcare among:
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body pt-0">
+                                                        <div class="edit-mode">
+                                                            <div class="form-group">
+                                                                <div class="rating-scale">
+                                                                    <input type="radio" id="rating0" name="rating" value="0">
+                                                                    <label for="rating0" >0</label>
+                                                                    <input type="radio" id="rating1" name="rating" value="1">
+                                                                    <label for="rating1">1</label>
+                                                                    <input type="radio" id="rating2" name="rating" value="2">
+                                                                    <label for="rating2">2</label>
+                                                                    <input type="radio" id="rating3" name="rating" value="3">
+                                                                    <label for="rating3">3</label>
+                                                                    <input type="radio" id="rating4" name="rating" value="4">
+                                                                    <label for="rating4">4</label>
+                                                                    <input type="radio" id="rating5" name="rating" value="5">
+                                                                    <label for="rating5">5</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                </div>
+                                                
+
+                                                <div class="question">
+                                                <div class="d-flex flex-grow-1 min-width-zero">
+                                                        <div
+                                                            class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                                            <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                                <span class="heading-number d-inline-block">
+                                                                    2
+                                                                </span>
+                                                                Please describe your experience with healthcare.
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                <div class="card-body pt-0">
+                                                    <div class="edit-mode">
+                                                        <div class="form-group">
+                                                            <div class="input-group" >
+                                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+
+                                                <div class="question">
+                                                <div class="d-flex flex-grow-1 min-width-zero">
+                                                    <div
+                                                        class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                                        <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                            <span class="heading-number d-inline-block">
+                                                                3
+                                                            </span>
+                                                            Select the most important aspect of healthcare among:
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                                <div class="card-body pt-0">
+                                                    <div class="edit-mode">
+                                                    <div class="form-group">
+                                                        <select class="form-control select2-single" data-width="100%">
+                                                            <option label="&nbsp;">&nbsp;</option>
+                                                            <option value="0">Text Input</option>
+                                                            <option value="1" selected>Single Select</option>
+                                                            <option value="2">Multiple Select</option>
+                                                            <option value="3">Checkbox</option>
+                                                            <option value="4">Radiobutton</option>
+                                                        </select>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+
+                                                <div class="d-flex flex-grow-1 min-width-zero">
+                                                    <div
+                                                        class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                                        <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                            <span class="heading-number d-inline-block">
+                                                                4
+                                                            </span>
+                                                            On a scale of 1 to 5, how important is disease in healthcare?
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                <div class="edit-mode">
+                                                    <div class="form-group">
+                                                        <div style="margin: 25px 50px 50px 25px;">
+                                                            <div class="col-12 col-xs-6">
+                                                                <div class="form-group mb-1">
+                                                                    <select class="rating" data-current-rating="-1">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                        <option value="4">4</option>
+                                                                        <option value="5">5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="d-flex flex-grow-1 min-width-zero">
+                                                <div
+                                                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                                    <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                        <span class="heading-number d-inline-block">
+                                                            5
+                                                        </span>
+                                                        Please describe your experience with healthcare.
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="card-body pt-0">
+                                            <div class="edit-mode">
+                                                <div class="form-group">
+                                                    <div class="input-group" >
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="d-flex flex-grow-1 min-width-zero">
+                                            <div
+                                                class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                                <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                    <span class="heading-number d-inline-block">
+                                                        6
+                                                    </span>
+                                                    Please describe your experience with healthcare.
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="card-body pt-0">
+                                        <div class="edit-mode">
+                                            <div class="form-group">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="d-flex flex-grow-1 min-width-zero">
+                                        <div
+                                            class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                            <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                                <span class="heading-number d-inline-block">
+                                                    7
+                                                </span>
+                                                Please describe your experience with healthcare.
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="edit-mode">
+                                        <div class="form-group">
+                                            <div class="input-group" >
+                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="d-flex flex-grow-1 min-width-zero">
+                                    <div
+                                        class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                                        <div class="list-item-heading mb-0 truncate w-80 mb-1 mt-1">
+                                            <span class="heading-number d-inline-block">
+                                                8
+                                            </span>
+                                            Please describe your experience with healthcare.
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="card-body pt-0">
+                                <div class="edit-mode">
+                                    <div class="form-group">
+                                        <div class="input-group" >
+                                            <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                            </div>
+
+                                            
+
+
+
+                                            </div>
+                                        </div>
+
+                                        
+
+                                    
+                                </div>
+                            
+
+                                <div class="col-lg-4 col-12 mb-4">
+                                    <div class="card mb-4">
+                                        <div class="position-absolute card-top-buttons">
+                                            <button class="btn btn-header-light icon-button">
+                                                <i class="simple-icon-pencil"></i>
+                                            </button>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="list-item-heading mb-4">Summary</p>
+                                            <p class="text-muted text-small mb-2">Name</p>
+                                            <p class="mb-3">
+                                                Developer Survey
+                                            </p>
+                                            <p class="text-muted text-small mb-2">Welcome Message</p>
+                                            <p class="mb-3">
+                                                As a software professional, you are an innovator, problem solver,
+                                                researcher, and a creative. Your job is to take big ideas
+                                                and make them a reality. With the right support, the possibilities are
+                                                endless.
+                                                <br>
+                                                <br> When roadblocks are removed and you’re allowed do your best work,
+                                                you change
+                                                the world.
+                                            </p>
+
+                                            <p class="text-muted text-small mb-2">Date</p>
+                                            <p class="mb-3">
+                                                12.05.2018 - 18.05.2018
+                                            </p>
+
+                                            <p class="text-muted text-small mb-2">Labels</p>
+                                            <div>
+                                                <p class="d-sm-inline-block mb-1">
+                                                    <a href="#">
+                                                        <span
+                                                            class="badge badge-pill badge-outline-theme-3 mb-1">EDUCATION</span>
+                                                    </a>
+                                                </p>
+                                                <p class="d-sm-inline-block  mb-1">
+                                                    <a href="#">
+                                                        <span
+                                                            class="badge badge-pill badge-outline-secondary mb-1">PERSONAL</span>
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid">
+            <div class="row  ">
+                <div class="col-12">
+                    <h1>Survey Preview</h1>
+                    <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb pt-0">
+                            <li class="breadcrumb-item">
+                                <a href="../index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Plan & pricing</a>
+                            </li>
+                            <li class="breadcrumb-item " aria-current="page"><a href="Create_survey.html">Create Surveys</a></li>
+                        </ol>
+                    </nav>
+                    <div class="separator mb-5"></div>
+                </div>
+            </div>
+
+            
+
+            <div class="row" >
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+
+                            <div class="jumbotron">
+                                <div>
+                                    <p class="lead">1. Select the most important aspect of healthcare among?</p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label lead" for="customCheck1">Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                            <label class="custom-control-label lead" for="customCheck2">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                            <label class="custom-control-label lead" for="customCheck3">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                            <label class="custom-control-label lead" for="customCheck4">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                            <label class="custom-control-label lead" for="customCheck5">Extremely dissatisfied</label>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+            
+                                <div>
+                                    <p class="lead">2.Please describe your experience with healthcare.?</p>
+                                    
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="input-group" >
+                                            <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                                <br>
+            
+                                <div>
+                                    <p class="lead">3.Select the most important aspect of healthcare among:? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+            
+                                <div>
+                                    <p class="lead">4. On a scale of 1 to 5, how important is disease in healthcare?? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="col-12 col-xs-6">
+                                            <div class="form-group mb-1">
+                                                <select class="rating" data-current-rating="-1">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+            
+                                <div>
+                                    <p class="lead">5.Please describe your experience with healthcare.? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="input-group" >
+                                            <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+            
+                                <div>
+                                    <p class="lead">6.Select the most important aspect of healthcare among:? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">7. Select the most important aspect of healthcare among:? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                    </div>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">8.On a scale of 1 to 5, how important is hospital in healthcare? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="col-12 col-xs-6">
+                                            <div class="form-group mb-1">
+                                                <select class="rating" data-current-rating="-1">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">9.Please describe your experience with healthcare.? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                    <div class="input-group" >
+                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                    </div>
+                                </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">10. Select the most important aspect of healthcare among:?</p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                        </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="jumbotron">
+                                <div>
+                                    <p class="lead">1. Please describe your experience with hospitality and travel.?</p>
+                                    <div class="input-group" >
+                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                    </div>
+                                    </div>
+                                    
+                                </div>
+            
+                                <div>
+                                    <p class="lead">2.What is the most important aspect of hospitality and travel among tourism, sightseeing, flight?</p>
+                                    
+
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                        </div>
+                
+                                </div>
+                                <br>
+            
+                                <div>
+                                    <p class="lead">3.On a scale of 1 to 5, how important is travel in hospitality and travel? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="form-group mb-4">
+                                            <label></label>
+                                            <div>
+                                                <div class="slider" id="singleSlider"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <br>
+            
+                                <div>
+                                    <p class="lead">4. What is the most important aspect of hospitality and travel among beach, sightseeing, accommodation? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                        </div>
+                                   
+                                </div>
+            
+                                <div>
+                                    <p class="lead">5.Select the most important aspect of hospitality and travel among:</p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                        </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">6.Please describe your experience with hospitality and travel. </p>
+                                    <div class="input-group" >
+                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">7. Select the most important aspect of hospitality and travel among: </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                        <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                    </div>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">8.On a scale of 1 to 5, how important is beach in hospitality and travel? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="form-group mb-4">
+                                            <label></label>
+                                            <div>
+                                                <div class="slider" id="singleSlider"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">9. On a scale of 1 to 5, how important is sightseeing in hospitality and travel? </p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="form-group mb-4">
+                                            <label></label>
+                                            <div>
+                                                <div class="slider" id="singleSlider"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div>
+                                    <p class="lead">10. Select the most important aspect of hospitality and travel among:</p>
+                                    <div style="margin: 25px 50px 50px 25px;">
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Satisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Neutral</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis">Dissatisfied</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckThis">
+                                            <label class="custom-control-label lead" for="customCheckThis"> Extremely dissatisfied</label>
+                                        </div>
+                                        </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+            
+
+        </div>
+    </main>
+    
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">Georeach Technologies  2024</p>
+                    </div>
+                    <div class="col-sm-6 d-none d-sm-block">
+                        <ul class="breadcrumb pt-0 pr-0 float-right">
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../index.html" class="btn-link">Home</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Plan & pricing</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../Contact-us.html" class="btn-link">Contact us </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/mousetrap.min.js"></script>
+    
+    <script src="js/vendor/nouislider.min.js"></script>
+    <script src="js/vendor/jquery.barrating.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.custom-control-input');
+    
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                checkboxes.forEach(cb => {
+                    if (cb !== this) {
+                        cb.checked = false;
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

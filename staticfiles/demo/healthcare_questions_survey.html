@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare Questions</title>
+    <style>
+      /* CSS styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* Grey background */
+        color: #333; /* Dark grey text color */
+      }
+
+      header {
+        background-color: #333; /* Dark grey header background */
+        color: #fff; /* White text color */
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333; /* Dark grey text color */
+      }
+
+      .question {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        opacity: 0; /* Initially hide the question */
+        animation: typing 1s steps(40, end); /* Typing animation */
+      }
+
+      .question p {
+        margin: 0;
+        font-weight: bold;
+        color: #555; /* Grey color */
+      }
+
+      .options {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      .options li {
+        margin-bottom: 5px;
+        color: #777; /* Light grey color */
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .button-container button {
+        padding: 8px 16px; /* Adjusted padding for smaller buttons */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #fff;
+        transition: background-color 0.3s;
+      }
+
+      .send-button {
+        background-color: #4caf50; /* Green color */
+      }
+
+      .send-button:hover {
+        background-color: #45a049;
+      }
+
+      .back-button {
+        background-color: #ccc; /* Grey color */
+      }
+
+      .back-button:hover {
+        background-color: #b3b3b3;
+      }
+
+      .home-button {
+        background-color: #007bff; /* Blue color */
+      }
+
+      .home-button:hover {
+        background-color: #0056b3;
+      }
+
+      .rating-container {
+        display: flex;
+        align-items: center;
+      }
+
+      .rating-value {
+        font-size: 14px;
+        color: #777;
+        margin-left: 10px;
+      }
+
+      /* Typing animation */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      .loader {
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -20px;
+        margin-top: -20px;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    /* Hide content initially */
+    .hidden {
+        display: none;
+    }
+    </style>
+  </head>
+  <body>
+    <script>
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        // Simulate an API request or any async operation
+        setTimeout(() => {
+            hideLoader();
+            showContent();
+        }, 4000); // Replace with your actual data loading logic and time
+      
+        function hideLoader() {
+            const loader = document.getElementById("loader");
+            loader.style.display = "none";
+        }
+      
+        function showContent() {
+            const content = document.getElementById("content");
+            content.style.display = "block";
+        }
+      });
+        </script>
+    
+        <div id="loader" class="loader"></div>
+        <div id="content" class="hidden">
+    <header>Survey AI - Healthcare Survey</header>
+
+    <div class="container">
+      <h2>Healthcare Questions</h2>
+      <div id="questions-container"></div>
+      <div class="button-container">
+        <button class="back-button">Back</button>
+        <form
+          id="healthcare-form"
+          action="{% url 'store_healthcare_answers' %}"
+          method="post"
+        >
+          <button class="home-button" type="submit">Home</button>
+        </form>
+        <button class="send-button">Send</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const questionsContainer = document.getElementById(
+          "questions-container"
+        );
+
+        const jsonResponse =
+          '{"healthcare_questions": [{"question_number": 1, "question_type": "dropdown", "question_text": "Select the most important aspect of healthcare among:", "options": ["patient", "treatment", "care", "disease", "hospital", "medicine", "health", "wellness", "doctor"]}, {"question_number": 2, "question_type": "rating_scale", "question_text": "On a scale of 1 to 5, how important is health in healthcare?", "options": [1, 2, 3, 4, 5]}, {"question_number": 3, "question_type": "dropdown", "question_text": "Select the most important aspect of healthcare among:", "options": ["treatment", "patient", "disease", "wellness", "medicine", "hospital", "health", "doctor", "care"]}, {"question_number": 4, "question_type": "rating_scale", "question_text": "On a scale of 1 to 5, how important is hospital in healthcare?", "options": [1, 2, 3, 4, 5]}, {"question_number": 5, "question_type": "dropdown", "question_text": "Select the most important aspect of healthcare among:", "options": ["patient", "health", "medicine", "wellness", "doctor", "disease", "care", "hospital", "treatment"]}, {"question_number": 6, "question_type": "rating_scale", "question_text": "On a scale of 1 to 5, how important is care in healthcare?", "options": [1, 2, 3, 4, 5]}, {"question_number": 7, "question_type": "rating_scale", "question_text": "On a scale of 1 to 5, how important is care in healthcare?", "options": [1, 2, 3, 4, 5]}, {"question_number": 8, "question_type": "multiple_choice", "question_text": "What is the most important aspect of healthcare among health, medicine, patient?", "options": ["health", "medicine", "patient"]}, {"question_number": 9, "question_type": "rating_scale", "question_text": "On a scale of 1 to 5, how important is hospital in healthcare?", "options": [1, 2, 3, 4, 5]}, {"question_number": 10, "question_type": "dropdown", "question_text": "Select the most important aspect of healthcare among:", "options": ["care", "health", "disease", "wellness", "hospital", "doctor", "medicine", "patient", "treatment"]}]}';
+
+        const responseData = JSON.parse(jsonResponse);
+
+        
+        const healthcareQuestions = responseData.healthcare_questions;
+
+        healthcareQuestions.forEach((question, index) => {
+          setTimeout(() => {
+            const questionElement = document.createElement("div");
+            questionElement.classList.add("question");
+            questionElement.innerHTML = `<p><b>Question ${question.question_number}:</b> ${question.question_text}</p>`;
+            questionsContainer.appendChild(questionElement);
+
+            if (question.options) {
+              const optionsList = document.createElement("ul");
+              optionsList.classList.add("options");
+              if (question.question_type === "multiple_choice") {
+                question.options.forEach((option) => {
+                  const optionItem = document.createElement("li");
+                  const input = document.createElement("input");
+                  input.type = "radio";
+                  input.name = `question_${question.question_number}`;
+                  input.value = option;
+                  optionItem.appendChild(input);
+                  optionItem.appendChild(document.createTextNode(option));
+                  optionsList.appendChild(optionItem);
+                });
+              } else if (question.question_type === "dropdown") {
+                const select = document.createElement("select");
+                select.name = `question_${question.question_number}`;
+                question.options.forEach((option) => {
+                  const optionElement = document.createElement("option");
+                  optionElement.value = option;
+                  optionElement.textContent = option;
+                  select.appendChild(optionElement);
+                });
+                optionsList.appendChild(select);
+              } else if (question.question_type === "rating_scale") {
+                const ratingContainer = document.createElement("div");
+                ratingContainer.classList.add("rating-container");
+
+                const ratingInput = document.createElement("input");
+                ratingInput.type = "range";
+                ratingInput.name = `question_${question.question_number}`;
+                ratingInput.min = 1;
+                ratingInput.max = 5;
+
+                const ratingValue = document.createElement("span");
+                ratingValue.textContent = "3"; // Default value
+                ratingValue.classList.add("rating-value");
+
+                ratingInput.addEventListener("input", function () {
+                  ratingValue.textContent = this.value;
+                });
+
+                ratingContainer.appendChild(ratingInput);
+                ratingContainer.appendChild(ratingValue);
+                optionsList.appendChild(ratingContainer);
+              }
+              questionElement.appendChild(optionsList);
+            }
+            questionElement.style.opacity = "1"; // Show the question after animation
+          }, index * 3000); // Adjust the delay between questions
+        });
+      });
+
+      const form = document.getElementById("healthcare-form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const jsonData = {};
+        formData.forEach((value, key) => {
+          jsonData[key] = value;
+        });
+        fetch("{% url 'store_healthcare_answers' %}", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": csrf_token, // Include your CSRF token here
+          },
+          body: JSON.stringify({ healthcare_responses: jsonData }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              alert("Responses stored successfully!");
+            } else {
+              throw new Error("Failed to store responses");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("An error occurred while storing responses");
+          });
+      });
+    </script>
+    </div>
+  </body>
+</html>

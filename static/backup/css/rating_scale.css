@@ -1,0 +1,41 @@
+/* Default styles for the scale */
+.rating-scale {
+    display: flex; /* Use flexbox for horizontal alignment */
+    font-size: 0; /* Remove default font size to align squares properly */
+    flex-wrap: wrap; /* Allow wrapping to fit on smaller screens */
+}
+
+/* Styles for each square in the scale */
+.rating-scale input {
+    display: none; /* Hide the radio buttons */
+}
+.rating-scale label {
+    display: inline-block;
+    width: 50px; /* Width of each square */
+    height: 35px; /* Height of each square */
+    background-color: #ccc; /* Default color for inactive squares */
+    margin-right: 5px; /* Spacing between squares */
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px; /* Center the number vertically */
+    font-size: 14px; /* Font size for the number */
+}
+
+/* Color for active squares */
+.rating-scale input:checked + label {
+    background-color: rgb(12, 81, 16);
+}
+
+/* Media query for responsive design */
+@media only screen and (max-width: 600px) {
+    .rating-scale {
+        justify-content: space-between; /* Spread items evenly in mobile view */
+    }
+    .rating-scale label {
+        width: 28px; /* Calculate width for 10 items with spacing */
+        height: 35px; /* Height remains the same */
+        line-height: 35px; /* Line height remains the same */
+        font-size: 12px; /* Font size for the number */
+        margin-right: 0; /* No margin between squares */
+    }
+}

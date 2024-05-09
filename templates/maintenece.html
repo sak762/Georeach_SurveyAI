@@ -1,0 +1,93 @@
+{% load static %}
+<!doctype html>
+<html lang="en" dir="ltr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey AI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- inject:css-->
+
+    <link rel="stylesheet" href="{% static '/assets/css/plugin.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static '/assets/css/style.css' %}">
+
+    <!-- endinject -->
+
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+</head>
+<body class="layout-light side-menu overlayScroll">
+    <div class="mobile-search">
+        <form class="search-form">
+            <span data-feather="search"></span>
+            <input class="form-control mr-sm-2 box-shadow-none" type="text" placeholder="Search...">
+        </form>
+    </div>
+    <div class="mobile-author-actions"></div>
+    <main class="main-content">
+        <div class="contents">
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="min-vh-100 content-center">
+                            <div class="maintenance-page text-center">
+                                <img src="{% static '/assets/img/svg/maintenance.svg' %}" alt="maintenance" class="svg" />
+                                <h5 class="maintenance-page__title">We are currently performing maintenance</h5>
+                                <p class="fw-500">We're making the system more awesome.We'll be back shortly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-copyright">
+                            <p>2024 @<a href="#">Georeach Technology</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-menu text-right">
+                            <ul>
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+                                <li>
+                                    <a href="#">Team</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- ends: .Footer Menu -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <div id="overlayer">
+        <span class="loader-overlay">
+            <div class="atbd-spin-dots spin-lg">
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+                <span class="spin-dot badge-dot dot-primary"></span>
+            </div>
+        </span>
+    </div>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduF2tLXicDEPDMAtC6-NLOekX0A5vlnY"></script>
+    <!-- inject:js-->
+    <script src="{% static '/assets/js/plugins.min.js' %}"></script>
+    <script src="{% static '/assets/js/script.min.js' %}"></script>
+    <!-- endinject-->
+</body>
+</html>

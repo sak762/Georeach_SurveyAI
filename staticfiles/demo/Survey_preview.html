@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Survey preview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="fonts/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="fonts/simple-line-icons/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    
+    <link rel="stylesheet" href="css/vendor/nouislider.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap-stars.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/rating_scale.css" />
+
+</head>
+
+<body id="app-container" class="menu-hidden show-spinner">
+    <nav class="navbar fixed-top">
+        <div class="d-flex align-items-center navbar-left">
+            <a href="#" class="menu-button d-none d-md-block">
+                <svg class="sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0" y="0.5" width="26" height="1" />
+                    <rect x="0" y="7.5" width="26" height="1" />
+                    <rect x="0" y="15.5" width="26" height="1" />
+                </svg>
+            </a>
+
+            <a href="#" class="menu-button-mobile d-xs-block d-sm-block d-md-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 17">
+                    <rect x="0.5" y="0.5" width="25" height="1" />
+                    <rect x="0.5" y="7.5" width="25" height="1" />
+                    <rect x="0.5" y="15.5" width="25" height="1" />
+                </svg>
+            </a>
+
+            <div class="search" data-search-path="Pages.Search.html?q=">
+                <input placeholder="Search...">
+                <span class="search-icon">
+                    <i class="simple-icon-magnifier"></i>
+                </span>
+            </div>
+        </div>
+
+        <a class="navbar-logo" href="Dashboard.Default.html">
+            <span class="logo d-none d-xs-block"></span>
+            <span class="logo-mobile d-block d-xs-none"></span>
+        </a>
+
+        <div class="navbar-right">
+            <div class="header-icons d-inline-block align-middle">
+                
+
+                <div class="position-relative d-none d-sm-inline-block">
+                    <button class="header-icon btn btn-empty" type="button" id="iconMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i class="simple-icon-grid"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right mt-3  position-absolute" id="iconMenuDropdown">
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-equalizer d-block"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-male-female d-block"></i>
+                            <span>Users</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-puzzle d-block"></i>
+                            <span>Components</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-bar-chart-4 d-block"></i>
+                            <span>Profits</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-file d-block"></i>
+                            <span>Surveys</span>
+                        </a>
+
+                        <a href="#" class="icon-menu-item">
+                            <i class="iconsminds-suitcase d-block"></i>
+                            <span>Tasks</span>
+                        </a>
+
+                    </div>
+                </div>
+
+               
+
+                <button class="header-icon btn btn-empty d-none d-sm-inline-block" type="button" id="fullScreenButton">
+                    <i class="simple-icon-size-fullscreen"></i>
+                    <i class="simple-icon-size-actual"></i>
+                </button>
+
+            </div>
+
+            <div class="user d-inline-block">
+                <button class="btn btn-empty p-0" type="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="name">user@123.gmail.com</span>
+                    <span>
+                        <img alt="Profile Picture" src="image/Authentication_pic.png" />
+                    </span>
+                </button>
+
+                <div class="dropdown-menu dropdown-menu-right mt-3">
+                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="#">Features</a>
+                    <a class="dropdown-item" href="#">History</a>
+                    <a class="dropdown-item" href="#">Support</a>
+                    <a class="dropdown-item" href="#">Sign out</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="menu">
+        <div class="main-menu">
+            <div class="scroll">
+                <ul class="list-unstyled">
+                    <li class="active">
+                        <a href="#menu">
+                            <i class="iconsminds-three-arrow-fork"></i> Menu
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub-menu">
+            <div class="scroll">
+                <h1 style="margin-left: 15px;">Create a survey</h1>
+                <div class="dropdown-divider"></div>
+                <ul class="list-unstyled" data-link="menu" id="menuTypes">
+                    
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_withAI.html" class="icon-menu-item">
+                                        <i class="simple-icon-screen-desktop"></i>  <span class="d-inline-block">Build with AI</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a href="Build_Scratch.html">
+                                        <i class="simple-icon-docs"></i> <span class="d-inline-block">Start from scratch</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body text-centre">
+                                    <a  href="#">
+                                        <i class="simple-icon-picture"></i> <span class="d-inline-block">Start from </span> 
+                                        <span>template</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card d-flex flex-row mb-3">
+                            <div class="d-flex flex-grow-1 min-width-zero">
+                                <div
+                                    class="card-body ">
+                                    <a  href="#">
+                                        <i class="simple-icon-doc"></i> <span class="d-inline-block">Copy a past survey</span>  
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <div class="dropdown-divider"></div>
+
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="container-fluid">
+            <div class="row  ">
+                <div class="col-12">
+                    <h1>Survey Preview</h1>
+                    <nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
+                        <ol class="breadcrumb pt-0">
+                            <li class="breadcrumb-item">
+                                <a href="../index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">Plan & pricing</a>
+                            </li>
+                            <li class="breadcrumb-item " aria-current="page"><a href="Create_survey.html">Create Surveys</a></li>
+                        </ol>
+                    </nav>
+                    <div class="separator mb-5"></div>
+                </div>
+            </div>
+
+            <div id="output"></div>
+            
+
+        </div>
+    </main>
+    
+    <footer class="page-footer">
+        <div class="footer-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p class="mb-0 text-muted">Georeach Technologies  2024</p>
+                    </div>
+                    <div class="col-sm-6 d-none d-sm-block">
+                        <ul class="breadcrumb pt-0 pr-0 float-right">
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../index.html" class="btn-link">Home</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="#" class="btn-link">Plan & pricing</a>
+                            </li>
+                            <li class="breadcrumb-item mb-0">
+                                <a href="../Contact-us.html" class="btn-link">Contact us </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/mousetrap.min.js"></script>
+    
+    <script src="js/vendor/nouislider.min.js"></script>
+    <script src="js/vendor/jquery.barrating.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const funcName = urlParams.get('func');
+            const output = document.getElementById('output');
+
+            if (funcName === 'customer_satisfaction') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <p class="lead">1. How satisfied are you with your overall experience at our store?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" >
+                                                    <label class="custom-control-label lead" for="customCheck1">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck2" >
+                                                    <label class="custom-control-label lead" for="customCheck2">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck3" >
+                                                    <label class="custom-control-label lead" for="customCheck3">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck4" >
+                                                    <label class="custom-control-label lead" for="customCheck4">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck5" >
+                                                    <label class="custom-control-label lead" for="customCheck5">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">2. On a scale of 0-5, how likely are you to recommend our product/service to a friend or family member?</p>
+                                            <div style="margin: 40px 21px 40px 21px;">
+                                                <div class="form-group mb-4">
+                                                    <div class="rating-scale">
+                                                        <input type="radio" id="rating0" name="rating" value="0">
+                                                        <label for="rating0" >0</label>
+                                                        <input type="radio" id="rating1" name="rating" value="1">
+                                                        <label for="rating1">1</label>
+                                                        <input type="radio" id="rating2" name="rating" value="2">
+                                                        <label for="rating2">2</label>
+                                                        <input type="radio" id="rating3" name="rating" value="3">
+                                                        <label for="rating3">3</label>
+                                                        <input type="radio" id="rating4" name="rating" value="4">
+                                                        <label for="rating4">4</label>
+                                                        <input type="radio" id="rating5" name="rating" value="5">
+                                                        <label for="rating5">5</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <br>
+        
+                                        <div>
+                                            <p class="lead">3.How likely are you to recommend our product/service to others? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio1" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio1">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio2" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio2">No</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <br>
+        
+                                        <div>
+                                            <p class="lead">4. Did our product/service meet your expectations? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio21" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio21">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio22" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio22">No</label>
+                                                </div>
+                                            </div>
+                                           
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">5.How would you rate the quality of our product/service? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="col-12 col-xs-6">
+                                                    <div class="form-group mb-1">
+                                                        <select class="rating" data-current-rating="-1">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">6.Were our customer service representatives helpful and knowledgeable? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio31" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio31">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio32" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio32">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">7. How satisfied are you with the pricing of our product/service? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                    <label class="custom-control-label lead" for="customCheck11">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                    <label class="custom-control-label lead" for="customCheck12">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                    <label class="custom-control-label lead" for="customCheck13">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                    <label class="custom-control-label lead" for="customCheck14">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                    <label class="custom-control-label lead" for="customCheck15">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">8.How well does our product/service meet your needs? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                    <label class="custom-control-label lead" for="customCheck21">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                    <label class="custom-control-label lead" for="customCheck22">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck23">
+                                                    <label class="custom-control-label lead" for="customCheck23">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck24">
+                                                    <label class="custom-control-label lead" for="customCheck24">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck25">
+                                                    <label class="custom-control-label lead" for="customCheck25">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">9. Did our product/service solve your problem? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio41" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio41">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio42" name="customRadio"
+                                                        class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio42">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div>
+                                            <p class="lead">10. Please provide any additional feedback or suggestions you may have to improve our product/service.?</p>
+                                            <div class="input-group" >
+                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for customer_satisfaction function here
+                checkselect();
+            }else if (funcName === 'employee_satisfaction'){
+                output.innerHTML = `
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="jumbotron">
+                                    <div>
+                                        <h1>Employee</h1>
+                                        <p class="lead">1. How satisfied are you with your overall experience at our store?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck1" multiple>
+                                                <label class="custom-control-label lead" for="customCheck1">Extremely satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck2" multiple>
+                                                <label class="custom-control-label lead" for="customCheck2">Satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck3" multiple>
+                                                <label class="custom-control-label lead" for="customCheck3">Neutral</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck4" multiple>
+                                                <label class="custom-control-label lead" for="customCheck4">Dissatisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck5" multiple>
+                                                <label class="custom-control-label lead" for="customCheck5">Extremely dissatisfied</label>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">2. On a scale of 0-5, how likely are you to recommend our product/service to a friend or family member?</p>
+                                        <div style="margin: 40px 21px 40px 21px;">
+                                            <div class="form-group mb-4">
+                                                <div class="rating-scale">
+                                                    <input type="radio" id="rating0" name="rating" value="0">
+                                                    <label for="rating0" >0</label>
+                                                    <input type="radio" id="rating1" name="rating" value="1">
+                                                    <label for="rating1">1</label>
+                                                    <input type="radio" id="rating2" name="rating" value="2">
+                                                    <label for="rating2">2</label>
+                                                    <input type="radio" id="rating3" name="rating" value="3">
+                                                    <label for="rating3">3</label>
+                                                    <input type="radio" id="rating4" name="rating" value="4">
+                                                    <label for="rating4">4</label>
+                                                    <input type="radio" id="rating5" name="rating" value="5">
+                                                    <label for="rating5">5</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                       
+                    
+                                    </div>
+                                    <br>
+    
+                                    <div>
+                                        <p class="lead">3.How likely are you to recommend our product/service to others? </p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio1_1" name="customRadio_1" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio1_1">Yes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio1_2" name="customRadio_1" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio1_2">No</label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <br>
+    
+                                    <div>
+                                        <p class="lead">4. Did our product/service meet your expectations? </p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio2_1" name="customRadio_2" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio2_1">Yes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio2_2" name="customRadio_2" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio2_2">No</label>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">5.How would you rate the quality of our product/service? </p>
+                                        <div style="margin: 40px 21px 40px 21px;">
+                                            <div class="form-group mb-4">
+                                                <div class="rating-scale">
+                                                    <input type="radio" id="rating0" name="rating" value="0">
+                                                    <label for="rating0" >0</label>
+                                                    <input type="radio" id="rating1" name="rating" value="1">
+                                                    <label for="rating1">1</label>
+                                                    <input type="radio" id="rating2" name="rating" value="2">
+                                                    <label for="rating2">2</label>
+                                                    <input type="radio" id="rating3" name="rating" value="3">
+                                                    <label for="rating3">3</label>
+                                                    <input type="radio" id="rating4" name="rating" value="4">
+                                                    <label for="rating4">4</label>
+                                                    <input type="radio" id="rating5" name="rating" value="5">
+                                                    <label for="rating5">5</label>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">6.Were our customer service representatives helpful and knowledgeable? </p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio3_1" name="customRadio_3" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio3_1">Yes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio3_2" name="customRadio_3" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio3_2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">7. How satisfied are you with the pricing of our product/service? </p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                <label class="custom-control-label lead" for="customCheck11">Extremely satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                <label class="custom-control-label lead" for="customCheck12">Satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                <label class="custom-control-label lead" for="customCheck13">Neutral</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                <label class="custom-control-label lead" for="customCheck14">Dissatisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                <label class="custom-control-label lead" for="customCheck15">Extremely dissatisfied</label>
+                                            ``</div>
+                                            
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">8.How well does our product/service meet your needs? </p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                <label class="custom-control-label lead" for="customCheck21">Extremely satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                <label class="custom-control-label lead" for="customCheck22">Satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck23">
+                                                <label class="custom-control-label lead" for="customCheck23">Neutral</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck24">
+                                                <label class="custom-control-label lead" for="customCheck24">Dissatisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck25">
+                                                <label class="custom-control-label lead" for="customCheck25">Extremely dissatisfied</label>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">9. Did our product/service solve your problem? </p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio4_1" name="customRadio_4" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio4_1">Yes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio4_2" name="customRadio_4" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio4_2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <div>
+                                        <p class="lead">10. Please provide any additional feedback or suggestions you may have to improve our product/service.?</p>
+                                        <div class="input-group" >
+                                            <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+                checkselect()
+            }else if (funcName === 'healthcare_surveys') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <p class="lead">1. Select the most important aspect of healthcare among?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck1">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck2" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck2">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck3" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck3">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck4" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck4">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck5" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck5">Extremely dissatisfied</label>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">2.Please describe your experience with healthcare.?</p>
+                                            
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">3.Select the most important aspect of healthcare among:? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                    <label class="custom-control-label lead" for="customCheck11">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                    <label class="custom-control-label lead" for="customCheck12">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                    <label class="custom-control-label lead" for="customCheck13">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                    <label class="custom-control-label lead" for="customCheck14">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                    <label class="custom-control-label lead" for="customCheck15">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">4. On a scale of 1 to 5, how important is disease in healthcare?? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="col-12 col-xs-6">
+                                                    <div class="form-group mb-1">
+                                                        <select class="rating" data-current-rating="-1">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">5.Please describe your experience with healthcare.? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">6.Select the most important aspect of healthcare among:? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                    <label class="custom-control-label lead" for="customCheck21">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                    <label class="custom-control-label lead" for="customCheck22">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck23">
+                                                    <label class="custom-control-label lead" for="customCheck23">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck24">
+                                                    <label class="custom-control-label lead" for="customCheck24">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck25">
+                                                    <label class="custom-control-label lead" for="customCheck25">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">7. Select the most important aspect of healthcare among:? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck31">
+                                                    <label class="custom-control-label lead" for="customCheck31">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck32">
+                                                    <label class="custom-control-label lead" for="customCheck32">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck33">
+                                                    <label class="custom-control-label lead" for="customCheck33">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck34">
+                                                    <label class="custom-control-label lead" for="customCheck34">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck35">
+                                                    <label class="custom-control-label lead" for="customCheck35">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                    
+                                        <div>
+                                            <p class="lead">8.On a scale of 1 to 5, how important is hospital in healthcare? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="col-12 col-xs-6">
+                                                    <div class="form-group mb-1">
+                                                        <select class="rating" data-current-rating="-1">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">9.Please describe your experience with healthcare.? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="input-group" >
+                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                            </div>
+                                        </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">10. Select the most important aspect of healthcare among:?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck41">
+                                                    <label class="custom-control-label lead" for="customCheck41">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck42">
+                                                    <label class="custom-control-label lead" for="customCheck42">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck43">
+                                                    <label class="custom-control-label lead" for="customCheck43">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck44">
+                                                    <label class="custom-control-label lead" for="customCheck44">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck45">
+                                                    <label class="custom-control-label lead" for="customCheck45">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for healthcare_satisfaction function here
+                checkselect();
+            }else if (funcName === 'Event_managment') {
+                output.innerHTML = `
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="jumbotron">
+                                    <div>
+                                        <p class="lead">1. Please rate your overall satisfaction with the event on a scale of 1-5, with 1 being very dissatisfied and 5 being very satisfied.</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="col-12 col-xs-6">
+                                                <div class="form-group mb-1">
+                                                    <select class="rating" data-current-rating="-1">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">2. How likely are you to recommend this event to a friend or colleague?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck41">
+                                                <label class="custom-control-label lead" for="customCheck41">Extremely satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck42">
+                                                <label class="custom-control-label lead" for="customCheck42">Satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck43">
+                                                <label class="custom-control-label lead" for="customCheck43">Neutral</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck44">
+                                                <label class="custom-control-label lead" for="customCheck44">Dissatisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck45">
+                                                <label class="custom-control-label lead" for="customCheck45">Extremely dissatisfied</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">3. Did the event meet your expectations?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio4_1" name="customRadio_4" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio4_1">Yes</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio4_2" name="customRadio_4" class="custom-control-input">
+                                                <label class="custom-control-label lead" for="customRadio4_2">No</label>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">4. Please rate the variety and quality of sessions/activities offered at the event on a scale of 1-10, with 1 being poor and 10 being excellent.</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="col-12 col-xs-6">
+                                                <div class="form-group mb-1">
+                                                    <select class="rating" data-current-rating="-1">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">5. Which session/activity did you find the most valuable?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">6. How would you rate the organization and logistics of the event?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="col-12 col-xs-6">
+                                                <div class="form-group mb-1">
+                                                    <select class="rating" data-current-rating="-1">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">7. Did you face any issues or challenges during the event? If yes, please describe in detail.</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">8. How was the event venue?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="col-12 col-xs-6">
+                                                <div class="form-group mb-1">
+                                                    <select class="rating" data-current-rating="-1">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div>
+                                        <p class="lead">9. Did you find the event to be engaging and interactive?</p>
+                                        <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                <label class="custom-control-label lead" for="customCheck11">Extremely satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                <label class="custom-control-label lead" for="customCheck12">Satisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                <label class="custom-control-label lead" for="customCheck13">Neutral</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                <label class="custom-control-label lead" for="customCheck14">Dissatisfied</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                <label class="custom-control-label lead" for="customCheck15">Extremely dissatisfied</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                `;
+                // Add code for healthcare_satisfaction function here
+                checkselect();
+            }else if (funcName === 'Volunteer_feedback') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <p class="lead">1. How satisfied are you with your overall volunteering experience?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck1">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck2" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck2">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck3" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck3">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck4" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck4">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck5" multiple>
+                                                    <label class="custom-control-label lead" for="customCheck5">Extremely dissatisfied</label>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">2.Please describe your experience with volunteer .?</p>
+                                            
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">3.Which aspect of volunteering did you find most fulfilling? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                    <label class="custom-control-label lead" for="customCheck12">a) Making a positive impact in the community</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                    <label class="custom-control-label lead" for="customCheck13">b) Learning new skills</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                    <label class="custom-control-label lead" for="customCheck14">c) Meeting new people and building relationships</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                    <label class="custom-control-label lead" for="customCheck15">d) Personal growth and development</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck16">
+                                                    <label class="custom-control-label lead" for="customCheck16">e) Other (please specify)</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">4. On a scale of 1 to 5, how important is disease in healthcare?? </p>
+                                            <div style="margin: 40px 21px 40px 21px;">
+                                                <div class="form-group mb-4">
+                                                    <div class="rating-scale">
+                                                        <input type="radio" id="rating0" name="rating" value="0">
+                                                        <label for="rating0" >0</label>
+                                                        <input type="radio" id="rating1" name="rating" value="1">
+                                                        <label for="rating1">1</label>
+                                                        <input type="radio" id="rating2" name="rating" value="2">
+                                                        <label for="rating2">2</label>
+                                                        <input type="radio" id="rating3" name="rating" value="3">
+                                                        <label for="rating3">3</label>
+                                                        <input type="radio" id="rating4" name="rating" value="4">
+                                                        <label for="rating4">4</label>
+                                                        <input type="radio" id="rating5" name="rating" value="5">
+                                                        <label for="rating5">5</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">5.Please describe your experience with healthcare.? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">6.How would you rate the level of support provided by the volunteer coordinator or organization? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                    <label class="custom-control-label lead" for="customCheck21">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                    <label class="custom-control-label lead" for="customCheck22">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck23">
+                                                    <label class="custom-control-label lead" for="customCheck23">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck24">
+                                                    <label class="custom-control-label lead" for="customCheck24">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck25">
+                                                    <label class="custom-control-label lead" for="customCheck25">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">7. Did you feel adequately trained and prepared for your volunteer role?
+                                            </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck31">
+                                                    <label class="custom-control-label lead" for="customCheck31">a) Yes, very much so</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck32">
+                                                    <label class="custom-control-label lead" for="customCheck32">b) Somewhat</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck33">
+                                                    <label class="custom-control-label lead" for="customCheck33">c) Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck34">
+                                                    <label class="custom-control-label lead" for="customCheck34">d) Not really</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck35">
+                                                    <label class="custom-control-label lead" for="customCheck35">e) Not at all</label>
+                                                </div>
+                                            </div>
+                    
+                                        <div>
+                                            <p class="lead">8.On a scale of 1 to 5, how ecommend volunteering with this organization to other? </p>
+                                            <div style="margin: 40px 21px 40px 21px;">
+                                                <div class="form-group mb-4">
+                                                    <div class="rating-scale">
+                                                        <input type="radio" id="rating0" name="rating" value="0">
+                                                        <label for="rating0" >0</label>
+                                                        <input type="radio" id="rating1" name="rating" value="1">
+                                                        <label for="rating1">1</label>
+                                                        <input type="radio" id="rating2" name="rating" value="2">
+                                                        <label for="rating2">2</label>
+                                                        <input type="radio" id="rating3" name="rating" value="3">
+                                                        <label for="rating3">3</label>
+                                                        <input type="radio" id="rating4" name="rating" value="4">
+                                                        <label for="rating4">4</label>
+                                                        <input type="radio" id="rating5" name="rating" value="5">
+                                                        <label for="rating5">5</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">9.Please describe your experience with healthcare.? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="input-group" >
+                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                            </div>
+                                        </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">10. Select the most important aspect of volunteer  among:?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck41">
+                                                    <label class="custom-control-label lead" for="customCheck41">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck42">
+                                                    <label class="custom-control-label lead" for="customCheck42">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck43">
+                                                    <label class="custom-control-label lead" for="customCheck43">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck44">
+                                                    <label class="custom-control-label lead" for="customCheck44">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck45">
+                                                    <label class="custom-control-label lead" for="customCheck45">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for healthcare_satisfaction function here
+                checkselect();
+            }else if (funcName === 'Retail_survey') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <p class="lead">1.How would you rate your overall satisfaction with the service provided during your recent shopping experience?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                    <label class="custom-control-label lead" for="customCheck12">a) Friendliness and helpfulness of staff</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                    <label class="custom-control-label lead" for="customCheck13">b) Speed and efficiency of service</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                    <label class="custom-control-label lead" for="customCheck14">c) Knowledgeability of staff about products/services</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                    <label class="custom-control-label lead" for="customCheck15">d) Cleanliness and organization of the store</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck16">
+                                                    <label class="custom-control-label lead" for="customCheck16">e) Other (please specify)</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">2.Which aspect of the service stood out to you the most?</p>
+                                            
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">3.How likely are you to recommend this store to a friend or family member based on your experience today?
+                                            </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                    <label class="custom-control-label lead" for="customCheck11">a) Very likely</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                    <label class="custom-control-label lead" for="customCheck12">b) Likely</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                    <label class="custom-control-label lead" for="customCheck13">c) Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                    <label class="custom-control-label lead" for="customCheck14">d) Unlikely</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                    <label class="custom-control-label lead" for="customCheck15">e) Very unlikely</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">4.Did you encounter any issues or challenges during your shopping experience? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">5.How would you rate the cleanliness and organization of the store? </p>
+                                            <div style="margin: 40px 21px 40px 21px;">
+                                                <div class="form-group mb-4">
+                                                    <div class="rating-scale">
+                                                        <input type="radio" id="rating0" name="rating" value="0">
+                                                        <label for="rating0" >0</label>
+                                                        <input type="radio" id="rating1" name="rating" value="1">
+                                                        <label for="rating1">1</label>
+                                                        <input type="radio" id="rating2" name="rating" value="2">
+                                                        <label for="rating2">2</label>
+                                                        <input type="radio" id="rating3" name="rating" value="3">
+                                                        <label for="rating3">3</label>
+                                                        <input type="radio" id="rating4" name="rating" value="4">
+                                                        <label for="rating4">4</label>
+                                                        <input type="radio" id="rating5" name="rating" value="5">
+                                                        <label for="rating5">5</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">6.Did you receive assistance from staff when needed during your shopping trip?
+                                            </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio4_1" name="customRadio_4" class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio4_1">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio4_2" name="customRadio_4" class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio4_2">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">7. How satisfied are you with the range of products available in the store?
+                                            </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck31">
+                                                    <label class="custom-control-label lead" for="customCheck31">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck32">
+                                                    <label class="custom-control-label lead" for="customCheck32">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck33">
+                                                    <label class="custom-control-label lead" for="customCheck33">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck34">
+                                                    <label class="custom-control-label lead" for="customCheck34">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck35">
+                                                    <label class="custom-control-label lead" for="customCheck35">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                    
+                                        <div>
+                                            <p class="lead">8.How would you rate the ease of finding products you were looking for?
+                                            </p>
+                                            <div style="margin: 40px 21px 40px 21px;">
+                                                <div class="form-group mb-4">
+                                                    <div class="rating-scale">
+                                                        <input type="radio" id="rating0" name="rating" value="0">
+                                                        <label for="rating0" >0</label>
+                                                        <input type="radio" id="rating1" name="rating" value="1">
+                                                        <label for="rating1">1</label>
+                                                        <input type="radio" id="rating2" name="rating" value="2">
+                                                        <label for="rating2">2</label>
+                                                        <input type="radio" id="rating3" name="rating" value="3">
+                                                        <label for="rating3">3</label>
+                                                        <input type="radio" id="rating4" name="rating" value="4">
+                                                        <label for="rating4">4</label>
+                                                        <input type="radio" id="rating5" name="rating" value="5">
+                                                        <label for="rating5">5</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">9.What could we do to improve your future shopping experiences with us? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="input-group" >
+                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                            </div>
+                                        </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">10.Were you greeted upon entering the store?
+                                            </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio4_1" name="customRadio_4" class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio4_1">Yes</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input type="radio" id="customRadio4_2" name="customRadio_4" class="custom-control-input">
+                                                    <label class="custom-control-label lead" for="customRadio4_2">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for healthcare_satisfaction function here
+                checkselect();
+            }else if (funcName === 'Software_feedback') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <div>
+                                                <p class="lead">1. Were you able to seamlessly integrate the software into your existing workflow without encountering any compatibility issues?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck6" multiple>
+                                                        <label class="custom-control-label lead" for="customCheck6">a) Yes, seamlessly integrated</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck7" multiple>
+                                                        <label class="custom-control-label lead" for="customCheck7">b) Integrated with minor issues</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck8" multiple>
+                                                        <label class="custom-control-label lead" for="customCheck8">c) Neutral</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck9" multiple>
+                                                        <label class="custom-control-label lead" for="customCheck9">d) Encountered compatibility issues</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck10" multiple>
+                                                        <label class="custom-control-label lead" for="customCheck10">e) Not compatible at all</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">2.Please describe your experience with software application.?</p>
+                                            
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                        
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">3.Did you encounter any bugs or glitches while using the software?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                    <label class="custom-control-label lead" for="customCheck11">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                    <label class="custom-control-label lead" for="customCheck12">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                    <label class="custom-control-label lead" for="customCheck13">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                    <label class="custom-control-label lead" for="customCheck14">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                    <label class="custom-control-label lead" for="customCheck15">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        <br>
+                    
+                                        <div>
+                                            <p class="lead">4. On a scale of 1 to 5,Would you recommend this software to others based on your experience?</p>
+                                            <div style="margin: 40px 21px 40px 21px;">
+                                                <div class="form-group mb-4">
+                                                    <div class="rating-scale">
+                                                        <input type="radio" id="rating0" name="rating" value="0">
+                                                        <label for="rating0" >0</label>
+                                                        <input type="radio" id="rating1" name="rating" value="1">
+                                                        <label for="rating1">1</label>
+                                                        <input type="radio" id="rating2" name="rating" value="2">
+                                                        <label for="rating2">2</label>
+                                                        <input type="radio" id="rating3" name="rating" value="3">
+                                                        <label for="rating3">3</label>
+                                                        <input type="radio" id="rating4" name="rating" value="4">
+                                                        <label for="rating4">4</label>
+                                                        <input type="radio" id="rating5" name="rating" value="5">
+                                                        <label for="rating5">5</label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">5.Were you able to seamlessly integrate the software into your existing workflow without encountering any compatibility issues? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">6.How satisfied are you with the level of customer support provided for the software? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                    <label class="custom-control-label lead" for="customCheck21">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                    <label class="custom-control-label lead" for="customCheck22">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck23">
+                                                    <label class="custom-control-label lead" for="customCheck23">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck24">
+                                                    <label class="custom-control-label lead" for="customCheck24">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck25">
+                                                    <label class="custom-control-label lead" for="customCheck25">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">7.Were you able to achieve your desired tasks/goals efficiently using the software? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck31">
+                                                    <label class="custom-control-label lead" for="customCheck31">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck32">
+                                                    <label class="custom-control-label lead" for="customCheck32">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck33">
+                                                    <label class="custom-control-label lead" for="customCheck33">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck34">
+                                                    <label class="custom-control-label lead" for="customCheck34">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck35">
+                                                    <label class="custom-control-label lead" for="customCheck35">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                    
+                                        <div>
+                                            <p class="lead">8.What enhancements or new features would you like to see in future updates of the software?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="input-group" >
+                                                    <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">9.Did you find the software interface intuitive and easy to navigate, allowing you to accomplish tasks efficiently? </p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                            <div class="input-group" >
+                                                <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                            </div>
+                                        </div>
+                                        </div>
+                    
+                                        <div>
+                                            <p class="lead">10.How frequently do you encounter performance issues such as lagging or freezing?</p>
+                                            <div style="margin: 25px 50px 50px 25px;">
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck41">
+                                                    <label class="custom-control-label lead" for="customCheck41">Extremely satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck42">
+                                                    <label class="custom-control-label lead" for="customCheck42">Satisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck43">
+                                                    <label class="custom-control-label lead" for="customCheck43">Neutral</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck44">
+                                                    <label class="custom-control-label lead" for="customCheck44">Dissatisfied</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-4">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck45">
+                                                    <label class="custom-control-label lead" for="customCheck45">Extremely dissatisfied</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for software feedback function here
+                checkselect();
+            }else if (funcName === 'Work_from_home') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <div>
+                                                <p class="lead">1. Overall Satisfaction with Work-from-Home Arrangement:</p>
+                                                <div style="margin: 40px 21px 40px 21px;">
+                                                    <div class="form-group mb-4">
+                                                        <div class="rating-scale">
+                                                            <input type="radio" id="rating0" name="rating" value="0">
+                                                            <label for="rating0">0</label>
+                                                            <input type="radio" id="rating1" name="rating" value="1">
+                                                            <label for="rating1">1</label>
+                                                            <input type="radio" id="rating2" name="rating" value="2">
+                                                            <label for="rating2">2</label>
+                                                            <input type="radio" id="rating3" name="rating" value="3">
+                                                            <label for="rating3">3</label>
+                                                            <input type="radio" id="rating4" name="rating" value="4">
+                                                            <label for="rating4">4</label>
+                                                            <input type="radio" id="rating5" name="rating" value="5">
+                                                            <label for="rating5">5</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">2. Please describe your experience with the software application:</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="input-group">
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">3. Did you encounter any bugs or glitches while using the software?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                        <label class="custom-control-label lead" for="customCheck11">Extremely satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                        <label class="custom-control-label lead" for="customCheck12">Satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck13">
+                                                        <label class="custom-control-label lead" for="customCheck13">Neutral</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck14">
+                                                        <label class="custom-control-label lead" for="customCheck14">Dissatisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck15">
+                                                        <label class="custom-control-label lead" for="customCheck15">Extremely dissatisfied</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">4. On a scale of 1 to 5, would you recommend this software to others based on your experience?</p>
+                                                <div style="margin: 40px 21px 40px 21px;">
+                                                    <div class="form-group mb-4">
+                                                        <div class="rating-scale">
+                                                            <input type="radio" id="rating0" name="rating2" value="0">
+                                                            <label for="rating0">0</label>
+                                                            <input type="radio" id="rating1" name="rating2" value="1">
+                                                            <label for="rating1">1</label>
+                                                            <input type="radio" id="rating2" name="rating2" value="2">
+                                                            <label for="rating2">2</label>
+                                                            <input type="radio" id="rating3" name="rating2" value="3">
+                                                            <label for="rating3">3</label>
+                                                            <input type="radio" id="rating4" name="rating2" value="4">
+                                                            <label for="rating4">4</label>
+                                                            <input type="radio" id="rating5" name="rating2" value="5">
+                                                            <label for="rating5">5</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">5. Were you able to seamlessly integrate the software into your existing workflow without encountering any compatibility issues?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="input-group">
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">6. How satisfied are you with the level of customer support provided for the software?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                        <label class="custom-control-label lead" for="customCheck21">Extremely satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                        <label class="custom-control-label lead" for="customCheck22">Satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck23">
+                                                        <label class="custom-control-label lead" for="customCheck23">Neutral</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck24">
+                                                        <label class="custom-control-label lead" for="customCheck24">Dissatisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck25">
+                                                        <label class="custom-control-label lead" for="customCheck25">Extremely dissatisfied</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">7. Were you able to achieve your desired tasks/goals efficiently using the software?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck31">
+                                                        <label class="custom-control-label lead" for="customCheck31">Extremely satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck32">
+                                                        <label class="custom-control-label lead" for="customCheck32">Satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck33">
+                                                        <label class="custom-control-label lead" for="customCheck33">Neutral</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck34">
+                                                        <label class="custom-control-label lead" for="customCheck34">Dissatisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck35">
+                                                        <label class="custom-control-label lead" for="customCheck35">Extremely dissatisfied</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">8. What enhancements or new features would you like to see in future updates of the software?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="input-group">
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">9. Did you find the software interface intuitive and easy to navigate, allowing you to accomplish tasks efficiently?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="input-group">
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">10. How frequently do you encounter performance issues such as lagging or freezing?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck41">
+                                                        <label class="custom-control-label lead" for="customCheck41">Extremely satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck42">
+                                                        <label class="custom-control-label lead" for="customCheck42">Satisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck43">
+                                                        <label class="custom-control-label lead" for="customCheck43">Neutral</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck44">
+                                                        <label class="custom-control-label lead" for="customCheck44">Dissatisfied</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck45">
+                                                        <label class="custom-control-label lead" for="customCheck45">Extremely dissatisfied</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for software feedback function here
+                checkselect();
+            }else if (funcName === 'university_instructor') {
+                output.innerHTML = `
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="jumbotron">
+                                        <div>
+                                            <div>
+                                                <p class="lead">1. Overall, how satisfied are you with the teaching methods and materials provided by the instructor?</p>
+                                                <div style="margin: 40px 21px 40px 21px;">
+                                                    <div class="form-group mb-4">
+                                                        <div class="rating-scale">
+                                                            <input type="radio" id="rating0" name="rating1" value="0">
+                                                            <label for="rating0">0</label>
+                                                            <input type="radio" id="rating1" name="rating1" value="1">
+                                                            <label for="rating1">1</label>
+                                                            <input type="radio" id="rating2" name="rating1" value="2">
+                                                            <label for="rating2">2</label>
+                                                            <input type="radio" id="rating3" name="rating1" value="3">
+                                                            <label for="rating3">3</label>
+                                                            <input type="radio" id="rating4" name="rating1" value="4">
+                                                            <label for="rating4">4</label>
+                                                            <input type="radio" id="rating5" name="rating1" value="5">
+                                                            <label for="rating5">5</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">2. Please describe your experience with the instructor's communication and availability:</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="input-group">
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">3. Did the instructor provide timely and constructive feedback on assignments and assessments?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck11">
+                                                        <label class="custom-control-label lead" for="customCheck11">Yes</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck12">
+                                                        <label class="custom-control-label lead" for="customCheck12">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">4. How engaging and interactive were the instructor's lectures and class discussions?</p>
+                                                <div style="margin: 40px 21px 40px 21px;">
+                                                    <div class="form-group mb-4">
+                                                        <div class="rating-scale">
+                                                            <input type="radio" id="rating0" name="rating2" value="0">
+                                                            <label for="rating0">0</label>
+                                                            <input type="radio" id="rating1" name="rating2" value="1">
+                                                            <label for="rating1">1</label>
+                                                            <input type="radio" id="rating2" name="rating2" value="2">
+                                                            <label for="rating2">2</label>
+                                                            <input type="radio" id="rating3" name="rating2" value="3">
+                                                            <label for="rating3">3</label>
+                                                            <input type="radio" id="rating4" name="rating2" value="4">
+                                                            <label for="rating4">4</label>
+                                                            <input type="radio" id="rating5" name="rating2" value="5">
+                                                            <label for="rating5">5</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div>
+                                                <p class="lead">5. Were the learning materials provided by the instructor helpful in understanding the course content?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck21">
+                                                        <label class="custom-control-label lead" for="customCheck21">Yes</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck22">
+                                                        <label class="custom-control-label lead" for="customCheck22">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">6. Did the instructor encourage active participation and collaboration among students?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck31">
+                                                        <label class="custom-control-label lead" for="customCheck31">Yes</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck32">
+                                                        <label class="custom-control-label lead" for="customCheck32">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">7. How effectively did the instructor provide feedback on student progress and performance?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="input-group">
+                                                        <textarea class="form-control" aria-label="With textarea" style="height: 200px;" placeholder="Type additional feedback or suggestions..."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">8. Were the course objectives clearly communicated by the instructor at the beginning of the semester?</p>
+                                                <div style="margin: 25px 50px 50px 25px;">
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck41">
+                                                        <label class="custom-control-label lead" for="customCheck41">Yes</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-4">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck42">
+                                                        <label class="custom-control-label lead" for="customCheck42">No</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            
+                                            <div>
+                                                <p class="lead">9. How would you rate the instructor's availability and responsiveness to student inquiries and concerns?</p>
+                                                <div style="margin: 40px 21px 40px 21px;">
+                                                    <div class="form-group mb-4">
+                                                        <div class="rating-scale">
+                                                            <input type="radio" id="rating0" name="rating2" value="0">
+                                                            <label for="rating0">0</label>
+                                                            <input type="radio" id="rating1" name="rating2" value="1">
+                                                            <label for="rating1">1</label>
+                                                            <input type="radio" id="rating2" name="rating2" value="2">
+                                                            <label for="rating2">2</label>
+                                                            <input type="radio" id="rating3" name="rating2" value="3">
+                                                            <label for="rating3">3</label>
+                                                            <input type="radio" id="rating4" name="rating2" value="4">
+                                                            <label for="rating4">4</label>
+                                                            <input type="radio" id="rating5" name="rating2" value="5">
+                                                            <label for="rating5">5</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                // Add code for software feedback function here
+                checkselect();
+            }
+            // Add conditions for other functions similarly
+            
+        };
+
+        function checkselect() {
+            const checkboxes = document.querySelectorAll('.custom-control-input');
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    checkboxes.forEach(cb => {
+                        if (cb !== this) {
+                            cb.checked = false;
+                        }
+                    });
+                });
+            });
+        }
+
+        
+            
+    </script>
+</body>
+
+</html>
