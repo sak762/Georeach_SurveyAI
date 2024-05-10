@@ -36,6 +36,8 @@ def home(request):
 def build_AI(request):
     return render(request, 'buildwith_ai.html')
 
+def register(request):
+    return render(request, 'register.html')
 
 def generate_healthcare_questions(num_questions=10):
     healthcare_keywords = ['health', 'care', 'medicine', 'hospital', 'doctor', 'patient', 'treatment', 'wellness', 'disease']

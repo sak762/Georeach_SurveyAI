@@ -51,4 +51,5 @@ urlpatterns = [
     path('endurance/', views.endurance, name='enduranceFeedback'),
     path('eventplanning/',views.eventplanning, name='eventPlanning'),
     path('submit_survey_responses/', submit_survey_responses, name='submit_survey_responses'),
+    path("register/", views.register, name= "register"),
 ]       

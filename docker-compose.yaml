@@ -1,0 +1,21 @@
+version: "3"
+services:
+  app:
+    container_name: surveyai
+    image: surveyai
+    restart: always
+    ports:
+      - "3000:3000"
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: surveyaii  # Changed to match 'NAME' from DATABASES
+      MYSQL_USER: root  # Changed to match 'USER' from DATABASES
+      MYSQL_PASSWORD: 1234  # Changed to match 'PASSWORD' from DATABASES
+    volumes:
+      - ./mysql_data:/var/lib/mysql # Change './mysql_data' to your desired path for MySQL data persistence
+    ports:
+      - '3306:3306' # MySQL default port

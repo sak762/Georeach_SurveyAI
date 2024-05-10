@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock title %}
+{% block body %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google-signin-client_id" content="495449330463-gt7j7042n0ng0ve2pf9gjv2cj4r0o9sq.apps.googleusercontent.com">
+    <title>Survey AI</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png'%}">
+
+    <!-- All Plugins -->
+	<link rel="stylesheet" href="{% static 'css/animation.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}" />
+	<link rel="stylesheet" href="{% static 'css/rangeSlider.min.css' %}" />
+	
+
+    <!-- Icons CSS -->
+    <link href="{% static 'css/fontawesome.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/counterup.min.js' %}"></script>
+    <script src="{% static 'js/rangeslider.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/shuffle.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</head>
+
+
+	<body>
+
+		<!-- ============================================================== -->
+		<!-- Preloader - style you can find in spinners.css -->
+		<!-- ============================================================== -->
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<div id="preloader">
+			<div class="preloader"><span></span><span></span></div>
+		</div>
+
+		<!-- ============================================================== -->
+		<!-- Main wrapper - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<div id="main-wrapper position-relative">
+			
+			<div class="position-absolute start-0 top-0 mt-4 ms-4 z-1">
+				<a href="index.html" class="d-xl-block d-lg-block d-none">
+					<img src="{% static 'image/Logo.png' %}" class="img-fluid" width="150" alt="">
+				</a>
+				<a href="index.html" class="d-xl-none d-lg-none d-block">
+					<img src="{% static 'image/Logo.png' %}" class="img-fluid" width="100" alt="">
+				</a>
+				
+			</div>
+			
+			<div class="position-absolute end-0 top-0 mt-4 me-4 z-1">
+				<a href="index.html"><span class="square--40 circle bg-light-primary text-primary"><i class="fa-solid fa-house"></i></span></a>
+			</div>
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-5 col-xl-4 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-success" >
+						<div class="flex-grow-1 py-5 px-4">
+						
+							<!-- Blockquote -->
+							<div class="reviewsBox px-4">
+								<div class="reviewsStar mb-4">
+									<div class="reviewsStars text-warning d-flex align-items-center justify-content-start gap-2">
+										<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+									</div>
+								</div>
+								<div class="reviewsCaptions mb-4">
+									<h6 class="text-light">"Good Support & Features"</h6>
+									<p class="text-lg fw-light text-light">Event organization can be stressful and hectic, and without participant feedback, you may not know what worked well and what needs improvement.</p>
+								</div>
+								<div class="reviewsBrans">
+									<div class="d-flex align-items-center justify-content-start gap-3">
+										<div class="square--50 circle bg-light-primary p-2">
+											<img src="{% static 'img/trustpilot.png' %}" class="img-fluid" alt="Trustpilot">
+										</div>
+										
+										<div class="exporrTitle">
+											<p class="text-light fs-6 fw-semibold lh-base mb-0">SurveyAI</p>
+											<p class="text-md text-light opacity-75 mb-0">2.6K+ Reviews</p>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<!-- End Blockquote -->
+
+							<!-- Clients -->
+							<div class="position-absolute start-0 end-0 bottom-0 text-center p-5">
+								<div class="row justify-content-center">
+								
+									<div class="col text-center py-3">
+										<p class="text-light fs-6 fw-semibold lh-base mb-0">SurveyAI</p>
+									</div>
+									<!-- End Col -->
+
+									<div class="col text-center py-3">
+										<p class="text-light fs-6 fw-semibold lh-base mb-0">SurveyAI</p>
+									</div>
+									<!-- End Col -->
+
+									<div class="col text-center py-3">
+										<p class="text-light fs-6 fw-semibold lh-base mb-0">SurveyAI</p>
+									</div>
+									<!-- End Col -->
+									
+								</div>
+								<!-- End Row -->
+							</div>
+							<!-- End Clients -->
+							
+						</div>
+					</div>
+					<!-- End Col -->
+
+					<div class="col-lg-7 col-xl-8 d-flex justify-content-center align-items-center min-vh-lg-100">
+						<div class="flex-grow-1 mx-auto py-5 px-4" style="max-width: 32rem;">
+							<!-- Heading -->
+							<div class="text-center mt-sm-0 mt-5 mb-5 mb-md-7">
+							  <h1 class="h2">Welcome to SurveyAI</h1>
+							  <p class="fs-6">Fill out the form to get registerd on SurveyAI.</p>
+							</div>
+							<!-- End Heading -->
+
+							<!-- Form -->
+							
+							<form class="needs-validation" method="post" action="{% url 'register' %}">
+
+								{% csrf_token %}
+								<!-- Form -->
+								<div class="mb-4">
+									<label class="form-label" for="email01">Your email</label>
+									<input type="email" class="form-control" name="email" id="email01" placeholder="email@site.com" required>
+									<span class="invalid-feedback">Please enter a valid email address.</span>
+								</div>
+								<!-- End Form -->
+								
+								<!-- Form -->
+								<div class="mb-4">
+									<label class="form-label" for="email01">Mobile no</label>
+									<input type="text" class="form-control" name="phone" id="email01" placeholder="Phone no" required>
+									<span class="invalid-feedback">Please enter a valid phone number.</span>
+								</div>
+								<!-- End Form -->
+
+								<!-- Form -->
+								<div class="mb-4">
+									<label class="form-label" for="pass01">Password</label>
+									<input type="password" name="password" class="form-control" id="pass01" placeholder="8+ characters required" required>
+									<span class="invalid-feedback">Please enter a valid password.</span>
+								</div>
+								<!-- End Form -->
+								
+								<!-- Form -->
+								<div class="mb-4">
+									<label class="form-label" for="pass02">Confirm Password</label>
+									<input type="password" name="confirm_password" class="form-control" id="pass02" placeholder="8+ characters required" required>
+									<span class="invalid-feedback">Please enter same password.</span>
+								</div>
+								<!-- End Form -->
+
+								<div class="d-grid mb-3">
+									<button type="submit" id="submitBtn"  class="btn btn-primary fw-medium">Sign up</button>
+								</div>
+
+								<!-- Form -->
+								<div class="row align-items-center justify-content-between g-3 mb-4">
+									<div class="col-xl-6 col-lg-6 col-md-6">
+										<a href="#" class="btn btn-outline-secondary border rounded-3 full-width">
+											<img src="{% static 'img/google.png' %}" class="img-fluid me-2" width="16" alt="Google">
+											Sign in with Google
+										</a>
+									</div>
+									
+									<div class="col-xl-6 col-lg-6 col-md-6">
+										<a href="#" class="btn btn-outline-secondary border rounded-3 full-width">
+											<img src="{% static 'img/facebook.png' %}" class="img-fluid me-2" width="16" alt="Facebook">
+											Sign in with Facebook
+										</a>
+									</div>
+									
+								</div>
+								<!-- End Form -->
+
+								<div class="text-center">
+									<p>Already have an account? <a class="link fw-medium text-primary" href="/user_login">log in here</a></p>
+								</div>
+							</form>
+							<!-- End Form -->
+							
+						</div>
+					</div>
+					<!-- End Col -->
+				
+				</div>
+				<!-- End Row -->
+			</div>
+
+
+			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="fa-regular fa-circle-up"></i></a>
+
+
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Wrapper -->
+		<!-- ============================================================== -->
+
+
+		<!-- ============================================================== -->
+		<!-- All Jquery -->
+		<!-- ============================================================== -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
+  		<script src="{% static 'js/counterup.min.js' %}"></script>
+		<script src="{% static 'js/rangeslider.js' %}"></script>
+		<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/shuffle.min.js' %}"></script>
+		<script src="{% static 'js/jquery.nicescroll.min.js'%}"></script>
+		<script src="{% static 'js/jquery.meanmenu.min.js'%}"></script>
+		<script src="{% static 'js/custom.js' %}"></script>
+
+		<!-- ============================================================== -->
+		<!-- This page plugins -->
+		<!-- ============================================================== -->
+        <script>
+	
+		
+			$(function() {  
+				$("body").niceScroll({
+					cursorcolor: "#424242"
+				});
+			});
+			jQuery(document).ready(function () {
+	        jQuery('header nav').meanmenu();
+});
+		</script>
+	</body>
+
+
+</html>
+{% endblock body %}
